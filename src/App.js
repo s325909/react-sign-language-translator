@@ -8,6 +8,9 @@ function App() {
 	// API key from .env
 	console.log(process.env.REACT_APP_API_KEY);
 
+	// API URL from .env
+	console.log(process.env.REACT_APP_API_URL);
+
 	return (
 		<BrowserRouter>
 			<div className="App">
