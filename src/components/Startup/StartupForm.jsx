@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../api/user";
+import { useUser } from "../../context/UserContext";
 import { storageSave } from "../../utils/storage";
 
 const usernameConfig = {
@@ -9,28 +11,42 @@ const usernameConfig = {
 };
 
 const StartupForm = () => {
+	// Hooks
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+	const { user, setUser } = useUser();
+	const navigate = useNavigate();
 
-	// local states for loading and api error
+	// Local States for loading and api error
 	const [loading, setLoading] = useState(false);
 	const [apiError, setApiError] = useState(null);
 
+	// Side Effects which runs when component rerenders
+	useEffect(() => {
+		if (user !== null) {
+			navigate("profile");
+			console.log("User has changed! ", user);
+		}
+	}, [user, navigate]);
+
+	// Event Handlers
 	const onSubmit = async ({ username }) => {
 		setLoading(true);
-		const [error, user] = await loginUser(username);
+		const [error, userResponse] = await loginUser(username);
 		if (error !== null) {
 			setApiError(true);
 		}
-		if (user !== null) {
-			storageSave("sign-user", user);
+		if (userResponse !== null) {
+			storageSave("sign-user", userResponse);
+			setUser(userResponse);
 		}
 		setLoading(false);
 	};
 
+	// Render Functions
 	const errorMessage = (() => {
 		if (!errors.username) {
 			return null;
