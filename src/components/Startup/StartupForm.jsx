@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../api/user";
+import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import { useUser } from "../../context/UserContext";
 import { storageSave } from "../../utils/storage";
 
@@ -40,7 +41,7 @@ const StartupForm = () => {
 			setApiError(true);
 		}
 		if (userResponse !== null) {
-			storageSave("sign-user", userResponse);
+			storageSave(STORAGE_KEY_USER, userResponse);
 			setUser(userResponse);
 		}
 		setLoading(false);
