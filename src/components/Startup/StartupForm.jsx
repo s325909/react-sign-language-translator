@@ -14,14 +14,16 @@ const StartupForm = () => {
 		formState: { errors },
 	} = useForm();
 
-	// local state
+	// local states for loading and api error
 	const [loading, setLoading] = useState(false);
+	const [apiError, setApiError] = useState(null);
 
 	const onSubmit = async ({ username }) => {
 		setLoading(true);
 		const [error, user] = await loginUser(username);
-		console.log("Error: ", error);
-		console.log("User: ", user);
+		if (error !== null) {
+			setApiError(true);
+		}
 		setLoading(false);
 	};
 
@@ -57,6 +59,7 @@ const StartupForm = () => {
 				</button>
 
 				{loading && <p>Logging in...</p>}
+				{apiError && <p>{apiError}</p>}
 			</form>
 		</>
 	);
