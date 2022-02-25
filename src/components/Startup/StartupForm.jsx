@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { loginUser } from "../../api/user";
+import { storageSave } from "../../utils/storage";
 
 const usernameConfig = {
 	required: true,
@@ -23,6 +24,9 @@ const StartupForm = () => {
 		const [error, user] = await loginUser(username);
 		if (error !== null) {
 			setApiError(true);
+		}
+		if (user !== null) {
+			storageSave("sign-user", user);
 		}
 		setLoading(false);
 	};
