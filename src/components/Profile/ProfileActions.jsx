@@ -32,7 +32,7 @@ const ProfileActions = () => {
 			translations: [],
 		};
 
-		storageSave(updatedUser);
+		storageSave(STORAGE_KEY_USER, updatedUser);
 		setUser(updatedUser);
 	};
 
