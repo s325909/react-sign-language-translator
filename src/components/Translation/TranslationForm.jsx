@@ -1,20 +1,24 @@
 import { useForm } from "react-hook-form";
 
-const TranslationForm = () => {
+const TranslationForm = ({ onTranslation }) => {
 	const { register, handleSubmit } = useForm();
 
-	const onSubmit = (data) => {
-		console.log(data);
+	const onSubmit = ({ text2sign }) => {
+		onTranslation(text2sign);
 	};
 
 	return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+		<form className="translationForm" onSubmit={handleSubmit(onSubmit)}>
 			<fieldset>
 				<label htmlFor="sign-translator">Text to sign language: </label>
-				<input type="text" {...register("text2sign")} placeholder="Hello" />
+				<input
+					type="text"
+					{...register("text2sign")}
+					placeholder="Hello"
+				/>
 			</fieldset>
 
-			<button type="submit">Translate</button>
+			<button type="submit">Translate to sign language</button>
 		</form>
 	);
 };
