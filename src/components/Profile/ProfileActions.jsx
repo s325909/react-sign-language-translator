@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
 import { STORAGE_KEY_USER } from "../../const/storageKeys";
 import { useUser } from "../../context/UserContext";
-import { storageSave } from "../../utils/storage";
+import { storageDelete } from "../../utils/storage";
 
 const ProfileActions = () => {
-
-    const { setUser } = useUser();
+	const { setUser } = useUser();
 
 	const handleSignOutClick = () => {
 		if (window.confirm("Are you sure?")) {
 			// Send an event to the parent
-            storageSave(STORAGE_KEY_USER, null);
-		    setUser(null);
+			storageDelete(STORAGE_KEY_USER);
+			setUser(null);
 		}
 	};
 
