@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { translationAdd } from "../api/translation";
 import TranslationForm from "../components/Translation/TranslationForm";
 import { useUser } from "../context/UserContext";
@@ -5,6 +6,7 @@ import withAuth from "../hoc/withAuth";
 
 const Translation = () => {
 	const { user } = useUser();
+	const [ translation, setTranslation ] = useState();
 
 	const handleTranslationSubmit = async (text) => {
 		if (text.length > 40) {
@@ -23,6 +25,26 @@ const Translation = () => {
 
 		console.log("Error ", error);
 		console.log("Result ", result);
+
+		const signTranslation = text.split("").map((char, index) => {
+			if (char === " ") {
+				return "";
+			} else {
+				const sign = char.toLowerCase();
+				const imgPath = "img/signs/" + sign + ".png";
+				console.log(imgPath);
+				return (
+					<img
+						src={imgPath}
+						alt={sign}
+						key={index + "-" + sign}
+						width="55"
+					/>
+				);
+			}
+		});
+
+		setTranslation(signTranslation);
 	};
 
 	return (
@@ -34,7 +56,7 @@ const Translation = () => {
 			</section>
 			{/* <TranslationForm onTranslation={handleTranslationClicked} /> */}
 			<h4>Summary: </h4>
-			{/* {translator && <p>Selected translator: {translator.name}</p>} */}
+			{translation && <p>Text to Sign: {translation}</p>}
 		</>
 	);
 };
