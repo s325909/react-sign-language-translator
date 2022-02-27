@@ -30,14 +30,13 @@ const Translation = () => {
 			if (char === " ") {
 				return "";
 			} else {
-				const sign = char.toLowerCase();
-				const imgPath = "img/signs/" + sign + ".png";
-				console.log(imgPath);
+				const signCharacter = char.toLowerCase();
+				const imgPath = "img/signs/" + signCharacter + ".png";
 				return (
 					<img
 						src={imgPath}
-						alt={sign}
-						key={index + "-" + sign}
+						alt={signCharacter}
+						key={index + "-" + signCharacter}
 						width="55"
 					/>
 				);
@@ -56,7 +55,7 @@ const Translation = () => {
 			</section>
 			{/* <TranslationForm onTranslation={handleTranslationClicked} /> */}
 			<h4>Summary: </h4>
-			{translation && <p>Text to Sign: {translation}</p>}
+			{translation && <p>Text to Sign: <br /> {translation}</p>}
 		</>
 	);
 };
