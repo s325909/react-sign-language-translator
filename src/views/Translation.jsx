@@ -40,7 +40,7 @@ const Translation = () => {
 
 		const signTranslation = text.split("").map((char, index) => {
 			if (char === " ") {
-				return "[space]";
+				return "___";
 				// return <br />;
 			} else {
 				const signCharacter = char.toLowerCase();
