@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Startup from "./views/Startup";
 import Translation from "./views/Translation";
 import Profile from "./views/Profile";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 	// API key from .env
@@ -14,6 +15,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<div className="App">
+				<Navbar />
 				<Routes>
 					<Route path="/" element={<Startup />} />
 					<Route path="/translation" element={<Translation />} />
