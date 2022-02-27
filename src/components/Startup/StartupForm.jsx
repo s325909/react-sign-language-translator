@@ -76,10 +76,10 @@ const StartupForm = () => {
 					<br /> {errorMessage}
 				</fieldset>
 				<button type="submit" disabled={loading}>
-					Continue
+					Sign in
 				</button>
 
-				{loading && <p>Logging in...</p>}
+				{loading && <p>Signing in...</p>}
 				{apiError && <p>{apiError}</p>}
 			</form>
 		</>
