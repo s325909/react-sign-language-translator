@@ -51,3 +51,16 @@ export const loginUser = async (username) => {
 	// return a new user if user not found
 	return await createUser(username);
 };
+
+export const userFindById = async (userId) => {
+	try {
+		const response = await fetch(`${apiURL}/${userId}`)
+		if (!response.ok) {
+			throw new Error("Could not fetch user by id " + userId)
+		}
+		const user = await response.json();
+		return [null, user];
+	} catch (error) {
+		return [error.message, null]
+	}
+}

@@ -28,7 +28,8 @@ const Translation = () => {
 
 		const signTranslation = text.split("").map((char, index) => {
 			if (char === " ") {
-				return "";
+				return;
+				// return <br />;
 			} else {
 				const signCharacter = char.toLowerCase();
 				const imgPath = "img/signs/" + signCharacter + ".png";
