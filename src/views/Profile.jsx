@@ -7,6 +7,18 @@ import withAuth from "../hoc/withAuth";
 const Profile = () => {
 	const { user } = useUser();
 
+	// useEffect(() => {
+	// 	const findUser = async () => {
+	// 		const [error, latestUser] = await userFindById(user.id);
+	// 		if (error === null) {
+	// 			storageSave(STORAGE_KEY_USER, latestUser)
+	// 			setUser(latestUser);
+	// 		}
+	// 	};
+
+	// 	findUser();
+	// }, [setUser, user.id]);
+
 	return (
 		<>
 			<h1>Profile Page</h1>
