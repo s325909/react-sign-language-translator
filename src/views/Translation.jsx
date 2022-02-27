@@ -37,7 +37,8 @@ const Translation = () => {
 						src={imgPath}
 						alt={signCharacter}
 						key={index + "-" + signCharacter}
-						width="55"
+						height="48"
+						width="48"
 					/>
 				);
 			}
