@@ -7,12 +7,12 @@ const validateKey = (key, location) => {
 export const storageSave = (key, value) => {
 	validateKey(key, "storageSave: ");
 	if (!value) throw new Error("storageSave: No value provided for: " + key);
-	localStorage.setItem(key, JSON.stringify(value));
+	sessionStorage.setItem(key, JSON.stringify(value));
 };
 
 export const storageRead = (key) => {
 	validateKey(key, "storageRead: ");
-	const data = localStorage.getItem(key);
+	const data = sessionStorage.getItem(key);
 	if (data) return JSON.parse(data);
 
 	return null;
@@ -20,5 +20,5 @@ export const storageRead = (key) => {
 
 export const storageDelete = (key) => {
 	validateKey(key, "storageDelete: ");
-	localStorage.removeItem(key);
+	sessionStorage.removeItem(key);
 };
