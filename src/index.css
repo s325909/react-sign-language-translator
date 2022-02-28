@@ -11,8 +11,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-body ul{
-  list-style-type: none;
+body ul {
+	list-style-type: none;
 }
 
 code {
@@ -20,29 +20,40 @@ code {
 		monospace;
 }
 
-.startup{
-  display: inline-flex;
-  font-family: cursive;
+.navbar {
+	display: flex;
+	font-family: cursive;
+	font-size: 16px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3px 3%;
 }
 
-.startup span{
-  font-size: 24px;
+.nav_title {
+	display: inline-flex;
+}
+
+.nav_links li {
+	padding: 3px 0px;
+}
+
+.startup {
+	display: inline-flex;
+	font-family: cursive;
+  border-bottom: 2px solid #845ec2;
+}
+
+.startup span {
+	font-size: 24px;
 }
 
 .startup_center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 600px;
-	background: whitesmoke;
 	border-radius: 15px;
 }
 
 .startup_center h2 {
 	text-align: center;
-	padding: 0 0 20px 0;
-	border-bottom: 1px solid silver;
+	padding: 15px 0 0 5px;
 }
 
 .form_field {
@@ -50,7 +61,7 @@ code {
 	padding: 20px;
 	margin-bottom: 20px;
 	width: 450px;
-  border-radius: 15px;
+	border-radius: 15px;
 	border-bottom: 15px solid #845ec2;
 }
 
