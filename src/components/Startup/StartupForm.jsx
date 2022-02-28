@@ -64,24 +64,25 @@ const StartupForm = () => {
 
 	return (
 		<>
-			<h2>What's your name?</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<fieldset>
-					<label htmlFor="username">Username: </label>
-					<input
-						type="text"
-						placeholder="john doe"
-						{...register("username", usernameConfig)}
-					/>
-					<br /> {errorMessage}
-				</fieldset>
-				<button type="submit" disabled={loading}>
-					Sign in
-				</button>
-
-				{loading && <p>Signing in...</p>}
-				{apiError && <p>{apiError}</p>}
-			</form>
+			<div className="startup_center">
+				<h2>What's your name?</h2>
+				<form onSubmit={handleSubmit(onSubmit)}>
+					<fieldset className="startup_field">
+						<input
+							type="text"
+							placeholder="What's your name?"
+							{...register("username", usernameConfig)}
+							required
+						/>
+						<br /> {errorMessage}
+						<button type="submit" disabled={loading}>
+							Sign in
+						</button>
+					</fieldset>
+					{loading && <p>Signing in...</p>}
+					{apiError && <p>{apiError}</p>}
+				</form>
+			</div>
 		</>
 	);
 };

@@ -3,7 +3,13 @@ import StartupForm from "../components/Startup/StartupForm";
 const Startup = () => {
 	return (
 		<>
-			<h1>Startup Page</h1>
+			<div className="startup">
+				<img src="/img/Logo.png" alt="Logo" width="64" height="64" />
+				<h1>
+					Lost in translation <br />
+					<span>Get started</span>
+				</h1>
+			</div>
 			<StartupForm />
 		</>
 	);
