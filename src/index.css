@@ -72,7 +72,8 @@ code {
 	height: 40px;
 	font-size: 16px;
 	margin: 10px 0;
-  background-color: beige;
+  background-color: #EFEFEF ;
+  color: #969696 ;
 }
 
 .form_field button {
