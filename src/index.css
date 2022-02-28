@@ -45,7 +45,7 @@ code {
 	border-bottom: 1px solid silver;
 }
 
-.startup_field {
+.form_field {
 	display: inline-flex;
 	padding: 20px;
 	margin-bottom: 20px;
@@ -54,7 +54,7 @@ code {
 	border-bottom: 15px solid #845ec2;
 }
 
-.startup_field input {
+.form_field input {
 	width: 100%;
 	padding: 0 5px;
 	height: 40px;
@@ -62,7 +62,7 @@ code {
 	margin: 10px 0;
 }
 
-.startup_field button {
+.form_field button {
 	background-color: #845ec2;
 	border-radius: 45px;
 	font-size: 16px;

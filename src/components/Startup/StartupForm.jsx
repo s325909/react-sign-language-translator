@@ -67,7 +67,7 @@ const StartupForm = () => {
 			<div className="startup_center">
 				<h2>What's your name?</h2>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					<fieldset className="startup_field">
+					<fieldset className="form_field">
 						<input
 							type="text"
 							placeholder="What's your name?"

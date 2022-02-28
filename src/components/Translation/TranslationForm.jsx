@@ -9,16 +9,14 @@ const TranslationForm = ({ onTranslation }) => {
 
 	return (
 		<form className="translationForm" onSubmit={handleSubmit(onSubmit)}>
-			<fieldset>
-				<label htmlFor="sign-translator">Text to sign language: </label>
+			<fieldset className="form_field">
 				<input
 					type="text"
 					{...register("text2sign")}
 					placeholder="Hello"
 				/>
+				<button type="submit">Translate</button>
 			</fieldset>
-
-			<button type="submit">Translate to sign language</button>
 		</form>
 	);
 };
