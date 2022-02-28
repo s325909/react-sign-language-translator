@@ -58,9 +58,10 @@ code {
 
 .form_field {
 	display: inline-flex;
-	padding: 20px;
-	margin-bottom: 20px;
-	width: 450px;
+	padding: 25px;
+  margin-top: 25px;
+	width: 500px;
+  background-color: white;
 	border-radius: 15px;
 	border-bottom: 15px solid #845ec2;
 }
@@ -71,13 +72,14 @@ code {
 	height: 40px;
 	font-size: 16px;
 	margin: 10px 0;
+  background-color: beige;
 }
 
 .form_field button {
 	background-color: #845ec2;
 	border-radius: 45px;
 	font-size: 16px;
-	width: 75%;
+	width: 30%;
 	padding: 10px;
 	margin-left: 10px;
 }

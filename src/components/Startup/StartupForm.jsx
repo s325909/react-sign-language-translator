@@ -65,7 +65,6 @@ const StartupForm = () => {
 	return (
 		<>
 			<div className="startup_center">
-				<h2>What's your name?</h2>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<fieldset className="form_field">
 						<input
