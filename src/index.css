@@ -73,7 +73,7 @@ code {
 	font-size: 16px;
 	margin: 10px 0;
   background-color: #EFEFEF ;
-  color: #969696 ;
+  /* color: #969696 ; */
 }
 
 .form_field button {
@@ -83,4 +83,18 @@ code {
 	width: 30%;
 	padding: 10px;
 	margin-left: 10px;
+}
+
+.profile_actions{
+  display: flex;
+  font-size: 24px;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 3px 3%;
+}
+
+.profile_actions button{
+  background-color: #845ec2;
+  font-size: 24px;
+  padding: 10px;
 }

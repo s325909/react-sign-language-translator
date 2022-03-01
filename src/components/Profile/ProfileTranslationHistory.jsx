@@ -4,7 +4,7 @@ const ProfileTranslationHistory = ({ translations }) => {
 	const translationList = translations.map((translation, index) => (
 		<ProfileTranslationHistoryItem
 			key={index + " - " + translation}
-			translation={translation}
+			translation={(index+=1) + ". " + translation}
 		/>
 	));
 
