@@ -1,6 +1,6 @@
 # React - Sign Language Translator App
 Lost in Translation - a Single Page Application built using the React framework.
-The application has one main feature: to act as a “translator” from regular text to sign language. Furthermore, to translate English words and short sentences to American sign language.
+The application has one main feature: to act as a “translator” from regular text to sign language, and to translate English words and short sentences to American sign language.
 
 ## Table of Contents
 - [Detailed Description](#detailed-description)
