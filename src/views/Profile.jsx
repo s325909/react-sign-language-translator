@@ -21,7 +21,6 @@ const Profile = () => {
 
 	return (
 		<>
-			<h1>Profile Page</h1>
 			<ProfileHeader username={user.username} />
 			<ProfileActions />
 			<ProfileTranslationHistory translations={user.translations} />

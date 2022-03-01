@@ -3,6 +3,10 @@ import { createHeaders } from ".";
 const apiURL = process.env.REACT_APP_API_URL;
 
 export const translationAdd = async (user, translation) => {
+	// max 10 translations allowed; first in first out using shift()
+	if (user.translations.length > 9) {
+		user.translations.shift();
+	}
 	try {
 		const response = await fetch(`${apiURL}/${user.id}`, {
 			method: "PATCH",

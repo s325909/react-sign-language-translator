@@ -1,21 +1,24 @@
-export const storageSave = (key, value) => {
-	if (!key) throw new Error("storageSave: No storage key provided!");
-	if (!value) throw new Error("storageSave: No value provided for: " + key);
+const validateKey = (key, location) => {
+	if (!key || typeof key !== "string") {
+		throw new Error(location + "Invalid storage key provided!");
+	}
+};
 
-	localStorage.setItem(key, JSON.stringify(value));
+export const storageSave = (key, value) => {
+	validateKey(key, "storageSave: ");
+	if (!value) throw new Error("storageSave: No value provided for: " + key);
+	sessionStorage.setItem(key, JSON.stringify(value));
 };
 
 export const storageRead = (key) => {
-	if (!key) throw new Error("storageRead: No storage key provided!");
-
-	const data = localStorage.getItem(key);
+	validateKey(key, "storageRead: ");
+	const data = sessionStorage.getItem(key);
 	if (data) return JSON.parse(data);
 
 	return null;
 };
 
 export const storageDelete = (key) => {
-	if (!key) throw new Error("storageDelete: No storage key provided!");
-
-	localStorage.removeItem(key);
+	validateKey(key, "storageDelete: ");
+	sessionStorage.removeItem(key);
 };
