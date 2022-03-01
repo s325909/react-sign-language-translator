@@ -40,8 +40,7 @@ const Translation = () => {
 
 		const signTranslation = text.split("").map((char, index) => {
 			if (char === " ") {
-				return "___";
-				// return <br />;
+				return <span className="span_space">__________</span>;
 			} else {
 				const signCharacter = char.toLowerCase();
 				const imgPath = "img/signs/" + signCharacter + ".png";
