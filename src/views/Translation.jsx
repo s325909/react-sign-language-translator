@@ -8,6 +8,7 @@ import { storageSave } from "../utils/storage";
 
 const Translation = () => {
 	const { user, setUser } = useUser();
+	const [text, setText] = useState();
 	const [translation, setTranslation] = useState();
 
 	const handleTranslationSubmit = async (text) => {
@@ -15,12 +16,7 @@ const Translation = () => {
 			return alert("Text can not exceed 40 letters!");
 		}
 
-		// const translation = text.trim();
-		console.log(text);
-
-		// 	// Check if we have a translation
-
-		// 	// Combine the user with the translations
+		setText(text);
 
 		// Send a HTTP Request
 		const [error, updatedUser] = await translationAdd(user, text);
@@ -61,16 +57,14 @@ const Translation = () => {
 
 	return (
 		<>
-			<h1>Translation Page</h1>
 			<section id="translator-options">
-				{/* {availableTranslators} */}
 				<TranslationForm onTranslation={handleTranslationSubmit} />
 			</section>
-			{/* <TranslationForm onTranslation={handleTranslationClicked} /> */}
-			<h4>Summary: </h4>
-			{translation && (
-				<p>
-					Text to Sign: <br /> {translation}
+			<h3 className="translation_txt">Text to Sign Language:</h3>
+			{translation && <p>{translation}</p>}
+			{text && (
+				<p className="translation_txt">
+					<b>Translation:</b> <i>{text}</i>
 				</p>
 			)}
 		</>
